@@ -23,6 +23,7 @@ namespace PythonCSharpProj
         {
             byte[] imageBytes = PyInterface.CallPythonMethod<byte[]>("testFunc", "TestFunc", new object[] {"111222"}, LogMsg);
             pictureBox1.Image = Image.FromStream(new MemoryStream(imageBytes));
+            errorProvider1.SetError(button1, "ERROR!");
         }
 
         private void LogMsg(object msg)
